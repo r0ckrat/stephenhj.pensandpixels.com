@@ -1,0 +1,28 @@
+<IfModule mod_rewrite.c>
+   RewriteEngine on
+   RewriteCond %{REQUEST_URI} ^/wp-login\.php(.*)$ [OR]
+   RewriteCond %{REQUEST_URI} ^/wp-admin$
+   RewriteCond %{REMOTE_ADDR} !^97\.113\.105\.189$
+   RewriteCond %{REMOTE_ADDR} !^97\.113\.109\.151$
+   RewriteCond %{REMOTE_ADDR} !^173\.160\.168\.97$
+   RewriteCond %{REMOTE_ADDR} !^71\.217\.26\.143$
+   RewriteCond %{REMOTE_ADDR} !^23\.243\.216\.70$
+   RewriteCond %{REMOTE_ADDR} !^98\.189\.121\.40$
+   RewriteCond %{REMOTE_ADDR} !^216\.231\.2\.26$
+   RewriteCond %{REMOTE_ADDR} !^98\.189\.236\.100$
+   RewriteCond %{REMOTE_ADDR} !^75\.142\.122\.109$
+   RewriteRule ^(.*)$ – [R=403,L]
+</IfModule>
+
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
